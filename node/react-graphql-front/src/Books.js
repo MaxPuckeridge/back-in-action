@@ -1,21 +1,21 @@
-import React from 'react';
-import { useQuery } from '@apollo/react-hooks';
-import { gql } from 'apollo-boost';
+import React from 'react'
+import { useQuery } from '@apollo/react-hooks'
+import { gql } from 'apollo-boost'
 
 const BOOKS = gql`
   {
     books {
-        title,
-        author
+      title
+      author
     }
   }
-`;
+`
 
 export default function Books() {
-  const { loading, error, data } = useQuery(BOOKS);
+  const { loading, error, data } = useQuery(BOOKS)
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :(</p>;
+  if (loading) return <p>Loading...</p>
+  if (error) return <p>Error :(</p>
 
   return data.books.map(({ title, author }) => (
     <div key={title}>
@@ -23,5 +23,5 @@ export default function Books() {
         {title} by {author}
       </p>
     </div>
-  ));
+  ))
 }
