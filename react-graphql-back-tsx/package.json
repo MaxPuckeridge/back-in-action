@@ -1,0 +1,22 @@
+{
+  "name": "react-graphql-back-tsx",
+  "version": "1.0.0",
+  "main": "dist/server.js",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^2.11.0",
+    "graphql": "^14.6.0"
+  },
+  "devDependencies": {
+    "@types/graphql": "^14.5.0",
+    "prettier": "^2.0.2",
+    "tslint": "^6.1.0",
+    "typescript": "^3.8.3"
+  },
+  "scripts": {
+    "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
+    "build": "tsc",
+    "prestart": "npm run build",
+    "start": "node ."
+  }
+}
